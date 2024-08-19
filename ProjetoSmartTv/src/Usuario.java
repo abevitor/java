@@ -14,7 +14,7 @@ public class Usuario {
             System.out.println( "a tv esta: " + smartTv.ligada1);
             
            
-            return;         
+            
         }
 
         if(pergunta == false){
@@ -40,6 +40,8 @@ public class Usuario {
          System.out.println("Volume Atual?: " + smartTv.volume);
          System.out.println("Canal Atual: "+smartTv.canal);
          System.out.println("Novo Status -> Volume Atual: " + smartTv.volume);
+
+        scanner.close();
 
        
         
