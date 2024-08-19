@@ -1,10 +1,13 @@
 public class SmartTv {
     boolean ligada = false;
+    String ligada1 = "Ligada!";
     int canal = 1;
     int volume = 25;
 
     public void ligar(){
+        
         ligada = true;
+        System.out.println("a tv esta ligada!");
 
     }
 
