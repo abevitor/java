@@ -1,4 +1,4 @@
-package aula4;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -12,8 +12,8 @@ public class Main {
 	static BufferedReader bi;
 	static FileWriter fw;
 	static BufferedWriter bw;
-	static final String RECEBACARACA= "C:\\Users\\Aluno.LAPTOP-EH2MO30N\\Desktop\\RECEBACARACA.txt";
-	static final String RECEBACARACAFINAL = "C:\\Users\\Aluno.LAPTOP-EH2MO30N\\Desktop\\RECEBACARACAFINAL.txt";
+	static final String RECEBACARACA= "C:\\Users\\Vitor\\Desktop\\recebacaraca.txt";
+	static final String RECEBACARACAFINAL = "C:\\Users\\Vitor\\Desktop\\recebacaracafinal.txt";
 	
 	
 	public static void main(String[] args) throws IOException {
