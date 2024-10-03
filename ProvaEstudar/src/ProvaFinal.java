@@ -2,8 +2,9 @@ import java.util.Scanner;
 
 
 public class ProvaFinal {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
 
         System.out.println("Digite uma palavra: ");
         String palavra = scanner.nextLine();
@@ -17,21 +18,44 @@ public class ProvaFinal {
         System.out.println("Digite outro valor: ");
         int coluna = scanner.nextInt();
 
+        System.out.println("Digite o método que deseja usar! do 1 ao 3");
+        int metodo = scanner.nextInt();
+        
         System.out.println(" ");
 
-        imprimirArray(linha);
-        System.out.println(" ");
-        imprimirMatriz(linha, coluna);
-        System.out.println(" ");
-        imprimirPos(palavra, pos);
+        scanner.close();
+
+        if (metodo == 1) {
+            imprimirArray(linha);
+            return;
+
+       
+            
+        }
+        if (metodo == 2) {
+            imprimirMatriz(linha, coluna);
+            return;
+            
+        }
+        if(metodo == 3){
+            
+            imprimirPos(palavra, pos);
+            return;
+            
+        }
+
+        
+
+    
         
 
 
-        scanner.close();
         
     }
 
-    public static void imprimirArray(int linha) {
+    public static void imprimirArray(int linha) {   
+        
+        
         int valor = 1;
 
         System.out.println("Array: ");
