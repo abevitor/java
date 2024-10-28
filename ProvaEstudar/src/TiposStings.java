@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class TiposStrings {
+public class TiposStings {
 	public static void main (String [] args) {
 		Scanner scanner = new Scanner(System.in);
 		StringBuffer x = new StringBuffer();
