@@ -27,12 +27,14 @@ public class PetShop {
         x.append("Bem vindo ao PetShop! nome, qual seria o serviço?");
         x.replace(22, 26, nome);
 
+        System.out.println(" ");
+
         System.out.println(x.toString());
 
         System.out.println("BANHO|TOSA|SPA|CORTAR UNHAS|SERVIÇO COMPLETO|PERGUNTAS");
         String servico = scanner.nextLine();
 
-        System.out.println();
+        System.out.println(" ");
 
         if (servico.toLowerCase().equals("banho")) {
             y.append(nome);
@@ -98,7 +100,7 @@ public class PetShop {
                 int parcela = scanner.nextInt();
                 scanner.nextLine();
 
-                Parcelar.parcelar(parcela, escolha);
+                ParcelarCortes.parcelar(parcela, escolha);
 
                 System.out.println("sera parcelado em: " + parcela + " vezes. Obrigado pela escolha!");
 
@@ -135,48 +137,64 @@ public class PetShop {
         }
         // parei aqui
         if (servico.toLowerCase().equals("spa")) {
-            System.out.println("você deseja: MASSAGEM SECA|MASSAGEM ÚMIDA|COM CREME|SEM CREME");
-
-            System.out.println("É possível escolher mais de uma opção! Quantas opções você deseja escolher");
-            int opcoes = scanner.nextInt();
-
+            System.out.println("você deseja:|MASSAGEM SECA|MASSAGEM UMIDA|COM CREME| || PREÇOS: |30|35|60|");
+            System.out.println(" ");
+        
+            String opcoes = " ";
+        
+            do {
+                try {
+                    opcoes = scanner.nextLine();
+                    Massagear.massagear(opcoes);  
+                    break; 
+                } catch (OpcaoInvalidaSpaException e) {
+                    System.out.println(e.getMessage() + " Por favor, tente novamente.");
+                }
+            } while (true);
+            
             System.out.println("Qual seria a forma de pagamento? CREDITO|PIX|DINHEIRO|DEBITO");
             String pagamentoSPA = scanner.nextLine();
-            if (pagamentoSPA.toLowerCase().equals("credito")) {
-
-                System.out.println("Quantas vezes voce deseja parcelar?");
-                int parcela = scanner.nextInt();
-                scanner.nextLine();
-
-                System.out.println("sera parcelado em: " + parcela + " vezes. Obrigado pela escolha!");
-
-                return;
+            
+            try {
+                if (pagamentoSPA.toLowerCase().equals("credito")) {
+                    Massagear.massagear(opcoes); 
+        
+                    System.out.println(" ");
+                    System.out.println("Quantas vezes voce deseja parcelar?");
+                    int parcela = scanner.nextInt();
+                    System.out.println(" ");
+                    System.out.println("sera parcelado em: " + parcela + " vezes. Obrigado pela escolha!");
+                    return;
+                }
+        
+                if (pagamentoSPA.toLowerCase().equals("pix")) {
+                    Massagear.massagear(opcoes); 
+        
+                    System.out.println(" ");
+                    System.out.println("Pague o PIX enviando o pagamento para esse email! -> petshopreceba2000@gmail.com. Obrigado pela escolha!");
+                    return;
+                }
+        
+                if (pagamentoSPA.toLowerCase().equals("dinheiro")) {
+                    Massagear.massagear(opcoes);
+        
+                    System.out.println("Se dirija ao caixa e pague a quantia correta! Obrigado pela escolha!");
+                    return;
+                }
+        
+                if (pagamentoSPA.toLowerCase().equals("debito")) {
+                    Massagear.massagear(opcoes); 
+        
+                    System.out.println("Ensira seu cartão! Obrigado pela escolha!");
+                    return;
+                }
+            } catch (OpcaoInvalidaSpaException e) {
+                System.out.println(e.getMessage() + " Por favor, tente novamente.");
             }
-
-            if (pagamentoSPA.toLowerCase().equals("pix")) {
-
-                System.out.println(
-                        "Pague o PIX enviando o pagamento para esse email! -> petshopreceba2000@gmail.com. Obrigado pela escolha!");
-
-                return;
-            }
-
-            if (pagamentoSPA.toLowerCase().equals("dinheiro")) {
-
-                System.out.println("Se dirija ao caixa e pague a quantia correta! Obrigado pela escolha!");
-
-                return;
-            }
-
-            if (pagamentoSPA.toLowerCase().equals("debito")) {
-
-                System.out.println("Ensira seu cartão! Obrigado pela escolha!");
-
-                return;
-            }
-
+        
             return;
         }
+        
 
         if (servico.toLowerCase().equals("cortar unhas")) {
 
@@ -190,4 +208,6 @@ public class PetShop {
         }
 
     }
+
+    
 }

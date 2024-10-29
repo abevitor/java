@@ -1,4 +1,4 @@
-public class Parcelar {
+public class ParcelarCortes { 
     public static double parcelar(int parcela, String escolha) {
         int cortar = 15;
         int  aparar = 20;
