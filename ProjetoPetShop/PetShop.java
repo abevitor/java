@@ -1,10 +1,8 @@
 import java.util.Scanner;
 
 // lista doque fazer
-//mexer no aptosar colocando thread.sleep
-// catch execption em alguns lugares(prioridade)
-// metodo de cortar unhas
-// metodo serviço completo
+// metodo de cortar unhas (colocar thread.sleep e exception)
+// metodo serviço completo( colocar thread.sleep(talvez) e exception)
 //metodo perguntas
 // colocar thread.sleep em alguns metodos
 
@@ -24,10 +22,23 @@ public class PetShop {
                 "");
         System.out.println("Digite seu nome!");
 
-        
-        String nome = scanner.nextLine();
+        String nome;
+
+        while (true) {
+        nome = scanner.nextLine();
         x.append("Bem vindo ao PetShop! nome, qual seria o serviço?");
         x.replace(22, 26, nome);
+
+        try {
+            ValidarNome.validarNome(nome);
+            break;
+        }catch (EspacoInvalidoException e) {
+            System.out.println("Erro: " + e.getMensagem());
+        }catch(IllegalArgumentException e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
+    }
+      
 
         System.out.println(" ");
 
@@ -55,7 +66,7 @@ public class PetShop {
             System.out.println(y.toString() + " você escolheu a opção banho!");
             
             
-            System.out.println(" Shampoo Premium|Shampoo comum|shampoo comum");
+            System.out.println(" Shampoo Premium 40R$|Shampoo comum 25 R$|shampoo anticaspas 35 R$");
 
             String shampoo;
             
@@ -78,10 +89,10 @@ public class PetShop {
             
 
                 System.out.println("Quantas vezes voce deseja parcelar?");
-                int parcela = scanner.nextInt();
-                scanner.nextLine();
+                int parcelaBanho = scanner.nextInt();
+                System.out.println(" ");
 
-                System.out.println("sera parcelado em: " + parcela + " vezes. Obrigado pela escolha!");
+                ParcelarBanho.parcelarBanho(parcelaBanho, shampoo);
 
                 return;
             }
