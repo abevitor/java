@@ -1,4 +1,4 @@
-package aula4;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -7,7 +7,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 
 
-public class Main {
+public class MainReceba {
 	static FileReader fi; 
 	static BufferedReader bi;
 	static FileWriter fw;

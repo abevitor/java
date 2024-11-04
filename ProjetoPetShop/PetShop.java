@@ -5,6 +5,9 @@ import java.util.Scanner;
 // metodo serviço completo( colocar thread.sleep(talvez) e exception)
 //metodo perguntas
 // colocar thread.sleep em alguns metodos
+// fazer Exceção de cada pagamento apos terminar o resto do programa
+//colocar ifs do metodo de pagamento nos ifs de cortar(PRINCIPAL)
+
 
 public class PetShop {
     public static void main(String[] args) {
@@ -248,8 +251,36 @@ public class PetShop {
             return;
         }
         
-
         if (servico.toLowerCase().equals("cortar unhas")) {
+            System.out.println("LIXAR 5R$|CORTAR PEQUENO 17R$|CORTAR MÉDIO 10R$");
+            
+            String escolhaUnha;
+            escolhaUnha = scanner.nextLine();
+            System.out.println(" ");
+
+            if(escolhaUnha.toLowerCase().equals("LIXAR")) {
+               Cortar.cortar(escolhaUnha);
+               System.out.println(" ");
+
+               System.out.println("Método de pagamento: CREDITO|DEBITO|PIX|DINHEIRO");
+               String pagamentoUnha;
+               pagamentoUnha = scanner.nextLine();
+               
+
+                return;
+            }
+
+            if(escolhaUnha.toLowerCase().equals("CORTAR PEQUENO")){
+                Cortar.cortar(escolhaUnha);
+
+                return;
+            }
+
+            if(escolhaUnha.toLowerCase().equals("CORTAR MÉDIO")){
+                Cortar.cortar(escolhaUnha);
+
+                return;
+            }
 
             return;
 
