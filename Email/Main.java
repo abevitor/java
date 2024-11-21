@@ -10,7 +10,7 @@ class Main {
         while (true) {
             email = scanner.nextLine();
             try {
-                validarEmail(email);
+                Email.validarEmail(email);
                 System.out.println("Seu email é valido!");
                 break;
             }catch (IllegalArgumentException e) {
@@ -19,10 +19,5 @@ class Main {
         } 
         
         scanner.close();
-    }
-    public static void validarEmail(String email) throws IllegalArgumentException {
-        if (!email.contains("@fatec.sp.gov.br")) {
-            throw new IllegalArgumentException("Não se pode colocar números na área de inserir o nome! Tente novamente.");
-        }
     }
 }
