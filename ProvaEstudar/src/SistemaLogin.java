@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 class LoginInvalidoException extends Exception {
-    private String mensagem;
+    public String mensagem;
 
     public LoginInvalidoException(String mensagem) {
         this.mensagem = mensagem;

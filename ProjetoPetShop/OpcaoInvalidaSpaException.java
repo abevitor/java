@@ -4,8 +4,7 @@ public class OpcaoInvalidaSpaException extends Exception {
         this.message = message;
 
     }
-
-    @Override
+    
     public String getMessage() {
         return message; 
     }
