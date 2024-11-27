@@ -14,6 +14,7 @@ class EspacoInvalidoException extends Exception {
 
 public class Fgts {
 
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String nome;
