@@ -5,7 +5,7 @@ public class OpcaoInvalidaBanharException extends Exception {
 
     }
 
-    @Override
+    
     public String getMessage() {
         return message;
     }

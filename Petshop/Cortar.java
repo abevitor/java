@@ -1,7 +1,7 @@
 import java.util.Random;
 
-public class Cortar {
-    public static void cortar(String escolhaUnha) {
+public class Cortar  {
+    public static void cortar(String escolhaUnha) throws OpcaoCortarInvalidaException {
 
         Random random = new Random();
         int numeroCortar = random.nextInt(10) + 1;
@@ -39,10 +39,17 @@ public class Cortar {
                 }
             }
         }
+    }
 
+    public static void validarOpcaoServico(String escolhaUnha) throws OpcaoCortarInvalidaException {
 
+        if (!escolhaUnha.equalsIgnoreCase("cortar pequeno") &&
+            !escolhaUnha.equalsIgnoreCase("cortar medio") &&
+            !escolhaUnha.equalsIgnoreCase("lixar")) {
+            throw new OpcaoCortarInvalidaException("Opção inválida!");
 
-
+        }
+        System.out.println("Opcão Selecionada:" + escolhaUnha);
     }
 
 }
