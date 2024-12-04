@@ -17,7 +17,7 @@ public class Main {
         
         b.calcularValorTotal(120, a);
 
-        b.informacoes(a, 120, 20, 0);
+        b.informacoes(a, 120, 20, 4800);
  
     }
 }
