@@ -1,15 +1,28 @@
-public class Receba {
+  public class Receba{
+  
+  public static void main(String[] args) {
 
-    public void Metodos(GetSetters a) {
+           
 
-        System.out.println( "Seu nome é: "+ a.getNome());
-        System.out.println("Sua idade é: " + a.getIdade());
-        System.out.println("Seu cpf é: " + a.getCpf());
-        System.out.println("Você escolheu a opção: " + a.getOpcoes());
-        System.out.println("Você depositou: " + a.getDeposito());
-        
-    }
+            String[] vetor = new String[] { "java", "html", "javascript" };
 
+           
 
+            String java = new String("java");
 
-}
+            String html = new String("HTML");
+
+            String javascript = new String("Java");
+
+           
+
+            System.out.print(vetor[0]==java);
+
+            System.out.print(" "+ vetor[1].equalsIgnoreCase(html) + " ");
+
+            System.out.print(vetor[2].startsWith(javascript));
+
+           
+
+     }
+ }
